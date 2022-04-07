@@ -1,0 +1,66 @@
+Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, its entire row and
+column are set to 0.
+
+#space O(1)
+
+void setZeros(int[][] matrix){
+    boolean rowHasZero = false;
+    boolean columnHasZero = false;
+
+    //check first row 
+    for(int i=0; i<matrix[0].length, i++){
+        if(matrix[0][i]==0){
+            rowHasZero=true;
+            break; 
+        }
+    }
+
+    //check first colume
+    for(int j=0; j<colume.length; j++){
+        if(colume[j][0]==0){
+            columeHasZero=true;
+            break;
+        }
+    }
+
+    for(int i=1; i<matrix.lemgth; i++){
+        for(int j=1; j<matrix[0].length; j++){
+            if(matrix[i][j]==0){
+                matrix[i][0] = 0;
+                matrix[0][j] = 0;
+            }
+        }
+    }
+    
+    //clean row
+    for(int i; i<matrix.length; i++){
+        if(matrix[i][0]){
+            nullifyRow(matrix, i);
+        }
+    }
+
+    //clean colume
+    for(int j; i<matrix[0].length; j++){
+        if(matrix[0][j]){
+            nullifyColume(matrix, i);
+        }
+    }
+
+    if(rowHasZero){
+        nullifyRow(matrix, 0);
+    }
+
+    if(columeHasZero){
+        nullifyColume(matrix, 0);
+    }
+
+    void nullifyRow(int[][] matrix, int row){
+        for(int j=0; j<matrix[0].length, j++)
+            matrix[row][j] = 0;
+    }
+
+    void nullifyColume(int[][] matrix, int colume){
+        for(int i=0; j<matrix.length, i++)
+            matrix[i][colume] = 0;
+    }
+}
